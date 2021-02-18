@@ -14,5 +14,9 @@
   "bugs": {
     "url": "https://github.com/Aksh-a1/portfolio-site/issues"
   },
-  "homepage": "https://github.com/Aksh-a1/portfolio-site#readme"
+  "homepage": "https://github.com/Aksh-a1/portfolio-site#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.32.7"
+  }
 }

@@ -1,0 +1,1 @@
+Main entry point of the app. The first html and js will go here
