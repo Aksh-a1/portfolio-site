@@ -1,0 +1,1 @@
+Styles for small components go here.
