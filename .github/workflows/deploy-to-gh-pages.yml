@@ -1,0 +1,27 @@
+name: Deploy To Github Page
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from repo
+        uses: actions/checkout@v2
+
+      - name: Setting up Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '14.x'
+
+      - name: Installing packages
+        run: yarn install --frozen-lockfile
+
+      - name: Clean any old css folder
+        run: yarn css:clean
+
+      - name: Create CSS files from SCSS
+        run: yarn css

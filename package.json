@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "This is my portfolio website.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "css": "node ./node_modules/sass/sass.js --no-source-map app:app/css",
+    "css:clean": "rimraf ./app/css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aksh-a1/portfolio-site.git"
@@ -17,6 +20,7 @@
   "homepage": "https://github.com/Aksh-a1/portfolio-site#readme",
   "dependencies": {},
   "devDependencies": {
-    "sass": "^1.32.7"
+    "rimraf": "3.0.2",
+    "sass": "1.32.7"
   }
 }
