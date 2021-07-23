@@ -19,7 +19,7 @@ export default function Home() {
         p={10}
       >
         <Box as={'main'}>
-          <Heading as={'h1'} fontSize={200} fontWeight={'normal'}>
+          <Heading as={'h1'} fontSize={160} fontWeight={'normal'}>
             AAKASH MAURYA
           </Heading>
           <Text fontSize='6xl' fontWeight={'extrabold'}>
@@ -32,7 +32,7 @@ export default function Home() {
             fontSize={'8xl'}
             bgColor={'black'}
             color={'white'}
-            w={'md'}
+            w={'sm'}
             h={'20'}
           >
             &gt;&gt;
