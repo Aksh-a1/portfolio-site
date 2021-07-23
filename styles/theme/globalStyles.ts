@@ -1,15 +1,14 @@
 export default {
   global: {
-    "html, body": {
+    'html, body': {
       padding: 0,
-      margin: 0
+      margin: 0,
+      height: '100vh'
     },
-    a: {
-      color: "inherit",
-      textDecoration: "none",
-    },
-    "*": {
-      boxSizing: "border-box",
+    '#__next': {
+      height: '100vh',
+      padding: 10,
+      backgroundColor: 'black'
     }
   }
 }

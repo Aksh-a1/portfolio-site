@@ -4,10 +4,7 @@ import fonts from './fonts'
 
 const theme = extendTheme({
   colors: {
-    brand: {
-      100: '#f7fafc',
-      900: '#1a202c'
-    }
+    primary: '#35e36b', //SHAMROCK GREEN
   },
   config: {
     cssVarPrefix: 'am'
