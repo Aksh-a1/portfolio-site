@@ -17,38 +17,36 @@ const Header: FC<Props> = ({ active, onClick }) => {
     [onClick]
   )
   return (
-    <nav>
-      <Flex justifyContent={'space-between'}>
-        <LinkButton
-          value={'home'}
-          onClick={handleClick}
-          active={active === 'home' || active === '/'}
-        >
-          Home
-        </LinkButton>
-        <LinkButton
-          value={'about'}
-          onClick={handleClick}
-          active={active === 'about'}
-        >
-          About
-        </LinkButton>
-        <LinkButton
-          value={'skills'}
-          onClick={handleClick}
-          active={active === 'skills'}
-        >
-          Skills
-        </LinkButton>
-        <LinkButton
-          value={'contact'}
-          onClick={handleClick}
-          active={active === 'contact'}
-        >
-          Contact
-        </LinkButton>
-      </Flex>
-    </nav>
+    <Flex as={'nav'} justifyContent={'space-between'}>
+      <LinkButton
+        value={'home'}
+        onClick={handleClick}
+        active={active === 'home' || active === '/'}
+      >
+        Home
+      </LinkButton>
+      <LinkButton
+        value={'about'}
+        onClick={handleClick}
+        active={active === 'about'}
+      >
+        About
+      </LinkButton>
+      <LinkButton
+        value={'skills'}
+        onClick={handleClick}
+        active={active === 'skills'}
+      >
+        Skills
+      </LinkButton>
+      <LinkButton
+        value={'contact'}
+        onClick={handleClick}
+        active={active === 'contact'}
+      >
+        Contact
+      </LinkButton>
+    </Flex>
   )
 }
 

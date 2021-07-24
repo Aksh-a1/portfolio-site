@@ -12,7 +12,7 @@ const Home: FC<Props> = ({ onClick }) => {
 
   return (
     <Flex h={'100%'} flexDirection={'column'} justifyContent={'space-between'}>
-      <Box as={'main'}>
+      <Box>
         <Heading as={'h1'} fontSize={160} fontWeight={'normal'}>
           AAKASH MAURYA
         </Heading>
