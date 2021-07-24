@@ -3,7 +3,8 @@ export default {
     'html, body': {
       padding: 0,
       margin: 0,
-      height: '100vh'
+      height: '100vh',
+      color: 'black'
     },
     '#__next': {
       height: '100vh',
