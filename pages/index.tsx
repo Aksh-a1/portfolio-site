@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useState } from 'react'
+import { Fragment, useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { Box } from '@chakra-ui/react'
 import Home from '../components/home'
@@ -8,11 +8,12 @@ import Contact from '../components/contact'
 import Header from '../components/header'
 import { TabType } from '../types/Tab'
 import Footer from '../components/footer'
+import PageLoader from '../components/common/pageLoader'
 
 const HomePage = () => {
   const router = useRouter()
-  const urlPath = router.asPath.split('/')[2] as TabType
-  const [tab, setTab] = useState<TabType>(urlPath ?? '/')
+  const [tab, setTab] = useState<TabType | null>(null)
+  const [pageLoad, setPageLoad] = useState<boolean>(true)
 
   const handleRouteChange = useCallback(
     (path: TabType) => {
@@ -30,9 +31,19 @@ const HomePage = () => {
     [handleRouteChange]
   )
 
-  return (
+  useEffect(
+    () => {
+      const urlPath = router.asPath.split('/')[2] as TabType
+      setPageLoad(false)
+      setTab(urlPath)
+    },
+    [] // eslint-disable-line react-hooks/exhaustive-deps
+  )
+
+  return !pageLoad && tab !== null ? (
     <Fragment>
       <Box
+        overflow={'auto'}
         w={'100%'}
         h={'100%'}
         bgColor={'primary'}
@@ -49,6 +60,8 @@ const HomePage = () => {
       </Box>
       <Footer />
     </Fragment>
+  ) : (
+    <PageLoader />
   )
 }
 
