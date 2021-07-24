@@ -9,25 +9,25 @@ const LetsConnect = () => {
         {`Let\'s connect on`}
       </Text>
       <ImageWithText
-        src={'/placeholder.png'}
+        src={'/gmail.png'}
         alt='Gmail'
         text={'akshmourya@gmail.com'}
         href={'mailto:akshmourya@gmail.com'}
       />
       <ImageWithText
-        src={'/placeholder.png'}
+        src={'/github.png'}
         alt='Github'
         text={'@Aksh-a1'}
         href={'https://github.com/Aksh-a1'}
       />
       <ImageWithText
-        src={'/placeholder.png'}
+        src={'/linkedIn.png'}
         alt='LinkedIn'
         text={'@akshv29'}
         href={'https://www.linkedin.com/in/akshv29'}
       />
       <ImageWithText
-        src={'/placeholder.png'}
+        src={'/instagram.png'}
         alt='Instagram'
         text={'@akshmaurya'}
         href={'https://www.instagram.com/akshmaurya/'}

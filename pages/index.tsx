@@ -14,10 +14,13 @@ const HomePage = () => {
   const urlPath = router.asPath.split('/')[2] as TabType
   const [tab, setTab] = useState<TabType>(urlPath ?? '/')
 
-  const handleRouteChange = useCallback((path: TabType) => {
-    const newRoutePath = `#/${path}`
-    router.push(newRoutePath, undefined, { shallow: true })
-  }, [router])
+  const handleRouteChange = useCallback(
+    (path: TabType) => {
+      const newRoutePath = `#/${path}`
+      router.push(newRoutePath, undefined, { shallow: true })
+    },
+    [router]
+  )
 
   const handleTabChange = useCallback(
     (newTab: TabType) => {
@@ -29,16 +32,22 @@ const HomePage = () => {
 
   return (
     <Fragment>
-    <Box w={'100%'} h={'100%'} bgColor={'primary'} borderRadius={'2xl'} p={10}>
-      {tab !== 'home' && tab !== '/' && (
-        <Header onClick={handleTabChange} active={tab} />
-      )}
-      {(tab === 'home' || tab === '/') && <Home onClick={handleTabChange} />}
-      {tab === 'about' && <About />}
-      {tab === 'skills' && <Skills />}
-      {tab === 'contact' && <Contact />}
-    </Box>
-    <Footer />
+      <Box
+        w={'100%'}
+        h={'100%'}
+        bgColor={'primary'}
+        borderRadius={'2xl'}
+        p={10}
+      >
+        {tab !== 'home' && tab !== '/' && (
+          <Header onClick={handleTabChange} active={tab} />
+        )}
+        {(tab === 'home' || tab === '/') && <Home onClick={handleTabChange} />}
+        {tab === 'about' && <About />}
+        {tab === 'skills' && <Skills />}
+        {tab === 'contact' && <Contact />}
+      </Box>
+      <Footer />
     </Fragment>
   )
 }
