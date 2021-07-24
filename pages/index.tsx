@@ -17,7 +17,7 @@ const HomePage = () => {
   const handleRouteChange = useCallback((path: TabType) => {
     const newRoutePath = `#/${path}`
     router.push(newRoutePath, undefined, { shallow: true })
-  }, [])
+  }, [router])
 
   const handleTabChange = useCallback(
     (newTab: TabType) => {

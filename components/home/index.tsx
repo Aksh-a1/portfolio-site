@@ -8,7 +8,7 @@ interface Props {
 const Home: FC<Props> = ({ onClick }) => {
   const handleClick = useCallback(() => {
     onClick('about')
-  }, [])
+  }, [onClick])
 
   return (
     <Flex h={'100%'} flexDirection={'column'} justifyContent={'space-between'}>

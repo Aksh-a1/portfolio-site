@@ -6,7 +6,7 @@ const LetsConnect = () => {
   return (
     <Flex flexDirection={'column'}>
       <Text textAlign={'center'} fontSize={'4xl'} fontWeight={'semibold'} mb={8}>
-        Let's connect on
+        {`Let\'s connect on`}
       </Text>
       <ImageWithText
         src={'/placeholder.png'}
