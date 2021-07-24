@@ -1,44 +1,46 @@
-import Head from 'next/head'
-import { Text, Heading, Box, Flex, Button } from '@chakra-ui/react'
+import { Fragment, useCallback, useState } from 'react'
+import { useRouter } from 'next/router'
+import { Box } from '@chakra-ui/react'
+import Home from '../components/home'
+import About from '../components/about'
+import Skills from '../components/skills'
+import Contact from '../components/contact'
+import Header from '../components/header'
+import { TabType } from '../types/Tab'
+import Footer from '../components/footer'
 
-export default function Home() {
+const HomePage = () => {
+  const router = useRouter()
+  const urlPath = router.asPath.split('/')[2] as TabType
+  const [tab, setTab] = useState<TabType>(urlPath ?? '/')
+
+  const handleRouteChange = useCallback((path: TabType) => {
+    const newRoutePath = `#/${path}`
+    router.push(newRoutePath, undefined, { shallow: true })
+  }, [])
+
+  const handleTabChange = useCallback(
+    (newTab: TabType) => {
+      setTab(newTab)
+      handleRouteChange(newTab)
+    },
+    [handleRouteChange]
+  )
+
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <meta name='description' content='Digital portfolio of Aakash Maurya' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <Flex
-        flexDirection={'column'}
-        justifyContent={'space-between'}
-        w={'100%'}
-        h={'100%'}
-        bgColor={'primary'}
-        borderRadius={'2xl'}
-        p={10}
-      >
-        <Box as={'main'}>
-          <Heading as={'h1'} fontSize={160} fontWeight={'normal'}>
-            AAKASH MAURYA
-          </Heading>
-          <Text fontSize='6xl' fontWeight={'extrabold'}>
-            WEB DEVELOPER
-          </Text>
-        </Box>
-        <Flex w={'100%'} flexDirection={'row-reverse'}>
-          <Button
-            _hover={{ backgroundColor: 'black' }}
-            fontSize={'8xl'}
-            bgColor={'black'}
-            color={'white'}
-            w={'sm'}
-            h={'20'}
-          >
-            &gt;&gt;
-          </Button>
-        </Flex>
-      </Flex>
-    </>
+    <Fragment>
+    <Box w={'100%'} h={'100%'} bgColor={'primary'} borderRadius={'2xl'} p={10}>
+      {tab !== 'home' && tab !== '/' && (
+        <Header onClick={handleTabChange} active={tab} />
+      )}
+      {(tab === 'home' || tab === '/') && <Home onClick={handleTabChange} />}
+      {tab === 'about' && <About />}
+      {tab === 'skills' && <Skills />}
+      {tab === 'contact' && <Contact />}
+    </Box>
+    <Footer />
+    </Fragment>
   )
 }
+
+export default HomePage

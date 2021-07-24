@@ -1,25 +1,53 @@
-import React from 'react'
-import Link from 'next/link'
-import { Button } from '@chakra-ui/react'
+import { FC, useCallback } from 'react'
+import { Flex } from '@chakra-ui/react'
+import LinkButton from '../common/linkButton'
+import { TabType } from '../../types/Tab'
 
-const Header = () => {
+interface Props {
+  active: TabType
+  onClick: Function
+}
+
+const Header: FC<Props> = ({ active, onClick }) => {
+  const handleClick = useCallback(
+    (e) => {
+      const value = e.target.value
+      onClick(value)
+    },
+    [onClick]
+  )
   return (
     <nav>
-      <Link href="/about" passHref>
-        <Button colorScheme='teal' variant='link'>
+      <Flex justifyContent={'space-between'}>
+        <LinkButton
+          value={'home'}
+          onClick={handleClick}
+          active={active === 'home' || active === '/'}
+        >
           Home
-        </Button>
-      </Link>
-      <Link href="/about" passHref>
-        <Button colorScheme='teal' variant='link'>
+        </LinkButton>
+        <LinkButton
+          value={'about'}
+          onClick={handleClick}
+          active={active === 'about'}
+        >
+          About
+        </LinkButton>
+        <LinkButton
+          value={'skills'}
+          onClick={handleClick}
+          active={active === 'skills'}
+        >
           Skills
-        </Button>
-      </Link>
-      <Link href="/about" passHref>
-        <Button colorScheme='teal' variant='link'>
+        </LinkButton>
+        <LinkButton
+          value={'contact'}
+          onClick={handleClick}
+          active={active === 'contact'}
+        >
           Contact
-        </Button>
-      </Link>
+        </LinkButton>
+      </Flex>
     </nav>
   )
 }

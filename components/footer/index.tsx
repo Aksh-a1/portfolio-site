@@ -1,18 +1,17 @@
-import { Text, Stack } from '@chakra-ui/react'
+import { Text, Stack, Flex } from '@chakra-ui/react'
 import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <Stack direction={["column", "row"]} spacing="16px">
-        <Text>
-          Made with ❤
+    <Flex m={1} as={'footer'} justifyContent={'center'}>
+      <Stack direction={['column', 'row']} spacing='8px'>
+        <Text color={'white'}>Made with</Text>
+        <Text as={'span'} color={'red'}>
+          ❤
         </Text>
-        <Text>
-          by Aakash Maurya
-        </Text>
+        <Text color={'white'}>by Aakash Maurya</Text>
       </Stack>
-    </footer>
+    </Flex>
   )
 }
 
