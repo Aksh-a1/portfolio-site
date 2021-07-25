@@ -1,51 +1,56 @@
-import React from 'react'
-import { SimpleGrid, Box } from '@chakra-ui/react'
+import { Fragment } from 'react'
+import { SimpleGrid, Text, Flex } from '@chakra-ui/react'
 import Card from '../card'
 import ResumeDownload from './resumeDownload'
 
 const Skills = () => {
   return (
-    <React.Fragment>
-      <SimpleGrid mt={4} minChildWidth='150px' spacing='40px'>
+    <Fragment>
+      <SimpleGrid mt={8} minChildWidth='150px' spacing='40px'>
         <Card title={'Languages'}>
-          <Box>HTML5</Box>
-          <Box>CSS3</Box>
-          <Box>JavaScript</Box>
-          <Box>TypeScript</Box>
-          <Box>Python</Box>
+          {['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'Python'].map(
+            (value, index) => (
+              <Text textAlign={'center'} fontSize={'xl'} fontWeight={'semibold'} key={index}>
+                {value}
+              </Text>
+            )
+          )}
         </Card>
         <Card title={'Client-Side'}>
-          <Box>ReactJS</Box>
-          <Box>NextJS</Box>
-          <Box>Redux</Box>
-          <Box>MaterialUI</Box>
-          <Box>Chakra-UI</Box>
-          <Box>Ant design</Box>
-          <Box>Formik</Box>
-          <Box>Apollo Client</Box>
+          {['ReactJS', 'NextJS', 'Redux', 'Formik', 'Apollo Client'].map(
+            (value, index) => (
+              <Text textAlign={'center'} fontSize={'xl'} fontWeight={'semibold'} key={index}>
+                {value}
+              </Text>
+            )
+          )}
         </Card>
         <Card title={'Server-Side'}>
-          <Box>NodeJS</Box>
-          <Box>ExpressJS</Box>
+          {['NodeJS', 'ExpressJS'].map((value, index) => (
+            <Text textAlign={'center'} fontSize={'xl'} fontWeight={'semibold'} key={index}>
+              {value}
+            </Text>
+          ))}
         </Card>
         <Card title={'Testing'}>
-          <Box>Jest</Box>
-          <Box>React testing library</Box>
+          {['Jest', 'React testing library'].map((value, index) => (
+            <Text textAlign={'center'} fontSize={'xl'} fontWeight={'semibold'} key={index}>
+              {value}
+            </Text>
+          ))}
         </Card>
-        <Card title={'Versioning & Deployment'}>
-          <Box>Docker</Box>
-          <Box>GitHub Actions</Box>
-          <Box>GIT</Box>
-          <Box>GitHub</Box>
-          <Box>Bitbucket</Box>
-        </Card>
-        <Card title={'Server-Side'}>
-          <Box>NodeJS</Box>
-          <Box>ExpressJS</Box>
+        <Card title={'Tools & Utilities'}>
+          {['GIT', 'GitHub', 'Bitbucket', 'JIRA'].map((value, index) => (
+            <Text textAlign={'center'} fontSize={'xl'} fontWeight={'semibold'} key={index}>
+              {value}
+            </Text>
+          ))}
         </Card>
       </SimpleGrid>
-      <ResumeDownload />
-    </React.Fragment>
+      <Flex mt={4} justifyContent={'center'} alignItems={'center'}>
+        <ResumeDownload />
+      </Flex>
+    </Fragment>
   )
 }
 

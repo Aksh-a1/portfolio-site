@@ -8,10 +8,12 @@ interface Props {
 
 const Card: FC<Props> = ({ title, children }) => {
   return (
-    <Box minH={'80px'}>
-      <Text fontSize={'xl'} fontWeight={'semibold'} textAlign={'center'}>{title}</Text>
-      <Divider />
-      {children}
+    <Box border={'solid'} rounded="md" minH={'80px'}>
+      <Text fontSize={'3xl'} fontWeight={'semibold'} textAlign={'center'}>
+        {title}
+      </Text>
+      <Divider borderColor={'black'} />
+      <Box my={2}>{children}</Box>
     </Box>
   )
 }
