@@ -35,7 +35,7 @@ const HomePage = () => {
     () => {
       const urlPath = router.asPath.split('/')[2] as TabType
       setPageLoad(false)
-      setTab(urlPath)
+      setTab(urlPath ?? '/')
     },
     [] // eslint-disable-line react-hooks/exhaustive-deps
   )
