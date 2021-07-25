@@ -1,13 +1,7 @@
 import React from 'react'
-import {
-  SimpleGrid,
-  Text,
-  Box,
-  Flex,
-  Image,
-  IconButton
-} from '@chakra-ui/react'
+import { SimpleGrid, Box } from '@chakra-ui/react'
 import Card from '../card'
+import ResumeDownload from './resumeDownload'
 
 const Skills = () => {
   return (
@@ -50,19 +44,7 @@ const Skills = () => {
           <Box>ExpressJS</Box>
         </Card>
       </SimpleGrid>
-      <Flex mt={4} justifyContent={'center'} alignItems={'center'}>
-        <IconButton
-          aria-label='Download Resume'
-          icon={<Image height={'90%'} src={'/save.svg'} />}
-          w={'20'}
-          h={'14'}
-          bgColor={'black'}
-          _hover={{ backgroundColor: 'black' }}
-        />
-        <Text ml={4} fontSize={'4xl'} fontWeight={'semibold'}>
-          Download resume
-        </Text>
-      </Flex>
+      <ResumeDownload />
     </React.Fragment>
   )
 }
