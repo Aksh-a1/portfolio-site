@@ -4,6 +4,8 @@ const ResumeDownload = () => {
   return (
     <Link
       display={'flex'}
+      flexDirection={'column'}
+      alignItems={'center'}
       href={'/Aakash_Maurya_Resume.pdf'}
       download={'Aakash_Maurya_Resume.pdf'}
     >
@@ -15,7 +17,7 @@ const ResumeDownload = () => {
         bgColor={'black'}
         _hover={{ backgroundColor: 'black' }}
       />
-      <Text ml={4} fontSize={'4xl'} fontWeight={'semibold'}>
+      <Text ml={4} fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'semibold'}>
         Download resume
       </Text>
     </Link>
