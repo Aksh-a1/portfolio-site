@@ -13,7 +13,13 @@ const LinkButton: FC<Props> = ({ children, active, onClick, ...rest }) => {
   return (
     <Box>
       <Button
-        fontSize={'6xl'}
+        fontSize={{
+          base: '2xl',
+          sm: '3xl',
+          md: '4xl',
+          lg: '5xl',
+          xl: '6xl'
+        }}
         bgColor={'transparent'}
         color={color}
         w={'100%'}

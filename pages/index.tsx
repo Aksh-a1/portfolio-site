@@ -49,7 +49,7 @@ const HomePage = () => {
         h={'100%'}
         bgColor={'primary'}
         borderRadius={'2xl'}
-        p={{ base: 4, sm: 4, md: 10, lg: 10, xl: 10, '2xl': 10 }}
+        p={{ base: 4, md: 10 }}
       >
         {tab !== 'home' && tab !== '/' && (
           <Header onClick={handleTabChange} active={tab} />

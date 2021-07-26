@@ -1,7 +1,7 @@
-import { FC, useCallback } from 'react'
-import { Flex } from '@chakra-ui/react'
+import { FC, useCallback, useMemo } from 'react'
 import LinkButton from '../common/linkButton'
 import { TabType } from '../../types/Tab'
+import ResponsiveNavbar from '../common/responsiveNavbar'
 
 interface Props {
   active: TabType
@@ -16,8 +16,9 @@ const Header: FC<Props> = ({ active, onClick }) => {
     },
     [onClick]
   )
+  const navbarButtonText = useMemo(() => active.charAt(0).toUpperCase() + active.slice(1), [active])
   return (
-    <Flex as={'nav'} justifyContent={'space-between'}>
+    <ResponsiveNavbar buttonText={navbarButtonText}>
       <LinkButton
         value={'home'}
         onClick={handleClick}
@@ -46,7 +47,7 @@ const Header: FC<Props> = ({ active, onClick }) => {
       >
         Contact
       </LinkButton>
-    </Flex>
+    </ResponsiveNavbar>
   )
 }
 

@@ -9,7 +9,7 @@ const ResumeDownload = () => {
     >
       <IconButton
         aria-label='Download Resume'
-        icon={<Image height={'90%'} src={'/save.svg'} />}
+        icon={<Image height={{ base: '70%', md: '90%' }} src={'/save.svg'} alt={'save image'}/>}
         w={'20'}
         h={'14'}
         bgColor={'black'}

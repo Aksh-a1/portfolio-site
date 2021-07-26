@@ -16,6 +16,9 @@ export default {
       display: 'flex',
       flexDirection: 'column',
       paddingBottom: [1, 1, 1, 1, 1, 1]
+    },
+    '*': {
+      wordBreak: 'break-word'
     }
   }
 }
