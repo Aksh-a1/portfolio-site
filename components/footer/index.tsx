@@ -1,7 +1,7 @@
+import { FC } from 'react'
 import { Text, Stack, Flex } from '@chakra-ui/react'
-import React from 'react'
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <Flex m={1} as={'footer'} justifyContent={'center'}>
       <Stack direction={'row'} spacing='8px'>

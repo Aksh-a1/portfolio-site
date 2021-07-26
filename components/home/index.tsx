@@ -15,18 +15,26 @@ const Home: FC<Props> = ({ onClick }) => {
       <Box>
         <Heading
           as={'h1'}
-          fontSize={{ base: 78, sm: 70, md: 186, lg: 128, xl: 160, '2xl': 160 }}
+          fontSize={{
+            base: '4.9rem',
+            sm: '9.1rem',
+            md: '11.6rem',
+            lg: '16.5rem',
+            xl: '10rem',
+            '2xl': '10rem'
+          }}
           fontWeight={'normal'}
+          lineHeight={1}
         >
           AAKASH MAURYA
         </Heading>
         <Text
-          textAlign={['center', 'unset']}
+          textAlign={['center', 'center', 'center', 'center', 'unset']}
           fontSize={{
             base: '4xl',
-            sm: '5xl',
-            md: '6xl',
-            lg: '6xl',
+            sm: '3rem',
+            md: '4rem',
+            lg: '6rem',
             xl: '6xl',
             '2xl': '6xl'
           }}
