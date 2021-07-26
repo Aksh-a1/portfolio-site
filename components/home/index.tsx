@@ -35,7 +35,7 @@ const Home: FC<Props> = ({ onClick }) => {
             base: '4xl',
             sm: '3rem',
             md: '4rem',
-            lg: '6rem',
+            lg: '5rem',
             xl: '6xl',
             '2xl': '6xl'
           }}
