@@ -15,11 +15,12 @@ const Home: FC<Props> = ({ onClick }) => {
       <Box>
         <Heading
           as={'h1'}
+          textAlign={['center', 'center', 'center', 'center', 'unset']}
           fontSize={{
-            base: '4.9rem',
-            sm: '9.1rem',
-            md: '11.6rem',
-            lg: '16.5rem',
+            base: '4rem',
+            sm: '9rem',
+            md: '11rem',
+            lg: '16rem',
             xl: '10rem',
             '2xl': '10rem'
           }}
