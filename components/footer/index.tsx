@@ -4,7 +4,7 @@ import React from 'react'
 const Footer: React.FC = () => {
   return (
     <Flex m={1} as={'footer'} justifyContent={'center'}>
-      <Stack direction={['column', 'row']} spacing='8px'>
+      <Stack direction={'row'} spacing='8px'>
         <Text color={'white'}>Made with</Text>
         <Text as={'span'} color={'red'}>
           ❤
