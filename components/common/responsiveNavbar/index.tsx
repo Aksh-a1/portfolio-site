@@ -2,7 +2,6 @@ import { FC, Fragment, ReactNode } from 'react'
 import {
   Flex,
   useBreakpoint,
-  Image,
   useBoolean,
   Collapse,
   Button,
@@ -21,13 +20,10 @@ const ResponsiveNavbar: FC<Props> = ({ children, buttonText }) => {
     <Fragment>
       <Button
         onClick={setNavToggle}
-        aria-label='Download Resume'
-        icon={<Image height={'90%'} src={'/save.svg'} />}
-        w={'100%'}
-        h={'14'}
         fontSize={{ base: '2xl', md: '4xl' }}
         bgColor={'black'}
         color={'white'}
+        padding={{ base: 1, md: 8 }}
         rightIcon={
           <StatDownArrow fontSize={{ base: 'lg', md: '2xl' }} color={'white'} />
         }
