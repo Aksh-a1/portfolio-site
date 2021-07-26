@@ -20,9 +20,9 @@ const Home: FC<Props> = ({ onClick }) => {
             base: '4rem',
             sm: '8rem',
             md: '11rem',
-            lg: '16rem',
-            xl: '10rem',
-            '2xl': '10rem'
+            lg: '12rem',
+            xl: '12rem',
+            '2xl': '12rem'
           }}
           fontWeight={'normal'}
           lineHeight={1}
