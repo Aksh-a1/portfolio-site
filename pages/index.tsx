@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { Box } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import Home from '../components/home'
 import About from '../components/about'
 import Skills from '../components/skills'
@@ -42,7 +42,8 @@ const HomePage = () => {
 
   return !pageLoad && tab !== null ? (
     <Fragment>
-      <Box
+      <Flex
+        flexDirection={'column'}
         overflow={'auto'}
         w={'100%'}
         h={'100%'}
@@ -57,7 +58,7 @@ const HomePage = () => {
         {tab === 'about' && <About />}
         {tab === 'skills' && <Skills />}
         {tab === 'contact' && <Contact />}
-      </Box>
+      </Flex>
       <Footer />
     </Fragment>
   ) : (
