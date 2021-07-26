@@ -18,7 +18,7 @@ const Home: FC<Props> = ({ onClick }) => {
           textAlign={['center', 'center', 'center', 'center', 'unset']}
           fontSize={{
             base: '4rem',
-            sm: '9rem',
+            sm: '8rem',
             md: '11rem',
             lg: '16rem',
             xl: '10rem',
