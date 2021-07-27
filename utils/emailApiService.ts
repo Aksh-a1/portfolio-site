@@ -6,8 +6,8 @@ export const sendEmail: (props: EmailBody) => Promise<SentMessageInfo> =
     const transporter = nodemailer.createTransport({
       service: process.env.MAIL_HOST,
       auth: {
-        user: 'process.env.MAIL_USER_NAME',
-        pass: 'process.env.MAIL_PASSWORD'
+        user: process.env.MAIL_USER_NAME,
+        pass: process.env.MAIL_PASSWORD
       }
     })
 
