@@ -1,4 +1,4 @@
-import { FC, Fragment, ReactNode } from 'react'
+import { FC, Fragment, ReactNode, useCallback } from 'react'
 import {
   Flex,
   Collapse,
@@ -16,6 +16,11 @@ interface Props {
 const ResponsiveNavbar: FC<Props> = ({ children, buttonText }) => {
   const breakpointValue = useBreakpoint()
   const [navToggle, { toggle: setNavToggle }] = useBoolean(false)
+  const handleCollapsableClick = useCallback(() => {
+    if (navToggle) {
+      setNavToggle()
+    }
+  }, [navToggle])
   return !['2xl', 'xl'].includes(breakpointValue as string) ? (
     <Fragment>
       <Button
@@ -28,7 +33,7 @@ const ResponsiveNavbar: FC<Props> = ({ children, buttonText }) => {
       >
         {buttonText}
       </Button>
-      <Collapse in={navToggle} animateOpacity>
+      <Collapse onClick={handleCollapsableClick} in={navToggle} animateOpacity>
         {children}
       </Collapse>
     </Fragment>
