@@ -2,8 +2,19 @@ import React from 'react'
 import { Text, Flex, Button } from '@chakra-ui/react'
 import InputField from '../../../common/formfields/inputField'
 import TextAreaField from '../../../common/formfields/textAreaField'
+import { sendEmail } from '../../../../utils/apiCalls'
 
 const MessageForm = () => {
+  const handleClick = () => {
+    sendEmail({ name: 'lol', email: 'boi', message: 'joi' }).then((data) => {
+      if (data === 'ERROR') {
+        console.log('error')
+        return
+      }
+      console.log('success')
+      return
+    })
+  }
   return (
     <Flex flexDirection={'column'}>
       <Flex mb={2} flexDirection={'column'}>
@@ -24,7 +35,11 @@ const MessageForm = () => {
         </Text>
         <TextAreaField minH={32} size={'lg'} placeholder={'Enter message...'} />
       </Flex>
-      <Button padding={{ base: 'unset', md: 'unset' }} w={'50%'}>
+      <Button
+        onClick={handleClick}
+        padding={{ base: 'unset', md: 'unset' }}
+        w={'50%'}
+      >
         Whoosh...
       </Button>
     </Flex>

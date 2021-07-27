@@ -1,0 +1,1 @@
+export type API_RESPONSE = 'SUCCESS' | 'ERROR'

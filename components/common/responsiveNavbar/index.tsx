@@ -20,7 +20,7 @@ const ResponsiveNavbar: FC<Props> = ({ children, buttonText }) => {
     if (navToggle) {
       setNavToggle()
     }
-  }, [navToggle])
+  }, [navToggle, setNavToggle])
   return !['2xl', 'xl'].includes(breakpointValue as string) ? (
     <Fragment>
       <Button
