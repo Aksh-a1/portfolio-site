@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { SimpleGrid, Text, Flex, Box } from '@chakra-ui/react'
-import Card from '../card'
+import Card from '../common/card'
 import ResumeDownload from './resumeDownload'
 
 const Skills = () => {

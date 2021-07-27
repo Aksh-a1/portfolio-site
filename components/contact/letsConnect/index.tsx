@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, Flex } from '@chakra-ui/react'
-import ImageWithText from '../../imageWithText'
+import ImageWithText from '../../common/imageWithText'
 
 const LetsConnect = () => {
   return (

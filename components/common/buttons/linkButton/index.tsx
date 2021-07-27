@@ -13,6 +13,7 @@ const LinkButton: FC<Props> = ({ children, active, onClick, ...rest }) => {
   return (
     <Box>
       <Button
+        variant='link'
         fontSize={{
           base: '2xl',
           sm: '3xl',
@@ -20,13 +21,9 @@ const LinkButton: FC<Props> = ({ children, active, onClick, ...rest }) => {
           lg: '5xl',
           xl: '6xl'
         }}
-        bgColor={'transparent'}
         color={color}
         w={'100%'}
         h={'20'}
-        variant='link'
-        _hover={{ textDecoration: 'none' }}
-        _focus={{ boxShadow: 'none' }}
         onClick={onClick}
         {...rest}
       >

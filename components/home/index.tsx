@@ -46,10 +46,7 @@ const Home: FC<Props> = ({ onClick }) => {
       </Box>
       <Flex w={'100%'} flexDirection={'row-reverse'}>
         <Button
-          _hover={{ backgroundColor: 'black' }}
           fontSize={['4xl', '6xl', '8xl']}
-          bgColor={'black'}
-          color={'white'}
           w={['xs', 'xs', 'sm']}
           h={['10', '20']}
           onClick={handleClick}

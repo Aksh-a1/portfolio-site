@@ -1,5 +1,5 @@
 import { FC, useCallback, useMemo } from 'react'
-import LinkButton from '../common/linkButton'
+import LinkButton from '../common/buttons/linkButton'
 import { TabType } from '../../types/Tab'
 import ResponsiveNavbar from '../common/responsiveNavbar'
 

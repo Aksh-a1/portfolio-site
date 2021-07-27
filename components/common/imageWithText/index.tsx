@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Text, Flex, Link } from '@chakra-ui/react'
-import Image from '../common/image'
+import Image from '../image'
 
 interface Props {
   text: string

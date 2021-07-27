@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Flex, Button } from '@chakra-ui/react'
-import InputField from '../../../common/inputField'
-import TextAreaField from '../../../common/textAreaField'
+import InputField from '../../../common/formfields/inputField'
+import TextAreaField from '../../../common/formfields/textAreaField'
 
 const MessageForm = () => {
   return (
@@ -24,12 +24,7 @@ const MessageForm = () => {
         </Text>
         <TextAreaField minH={32} size={'lg'} placeholder={'Enter message...'} />
       </Flex>
-      <Button
-        _hover={{ backgroundColor: 'black' }}
-        bgColor={'black'}
-        color={'white'}
-        w={'50%'}
-      >
+      <Button padding={{ base: 'unset', md: 'unset' }} w={'50%'}>
         Whoosh...
       </Button>
     </Flex>

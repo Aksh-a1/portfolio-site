@@ -1,11 +1,11 @@
 import { FC, Fragment, ReactNode } from 'react'
 import {
   Flex,
-  useBreakpoint,
-  useBoolean,
   Collapse,
   Button,
-  StatDownArrow
+  StatDownArrow,
+  useBreakpoint,
+  useBoolean
 } from '@chakra-ui/react'
 
 interface Props {
@@ -21,13 +21,10 @@ const ResponsiveNavbar: FC<Props> = ({ children, buttonText }) => {
       <Button
         onClick={setNavToggle}
         fontSize={{ base: '2xl', md: '4xl' }}
-        bgColor={'black'}
-        color={'white'}
         padding={{ base: 1, md: 8 }}
         rightIcon={
           <StatDownArrow fontSize={{ base: 'lg', md: '2xl' }} color={'white'} />
         }
-        _hover={{ backgroundColor: 'black' }}
       >
         {buttonText}
       </Button>
