@@ -1,48 +1,69 @@
-import React from 'react'
-import { Text, Flex, Button } from '@chakra-ui/react'
+import { FC, useCallback } from 'react'
+import { Flex, Button, useBoolean } from '@chakra-ui/react'
+import Form from '../../../common/formfields/form/Form'
+import FormFieldController from '../../../common/formfields/form/FormFieldController'
 import InputField from '../../../common/formfields/inputField'
 import TextAreaField from '../../../common/formfields/textAreaField'
-import { sendEmail } from '../../../../utils/apiCalls'
+import useOnSubmit from './useOnSubmit'
 
-const MessageForm = () => {
-  const handleClick = () => {
-    sendEmail({ name: 'lol', email: 'boi', message: 'joi' }).then((data) => {
-      if (data === 'ERROR') {
-        console.log('error')
-        return
-      }
-      console.log('success')
-      return
-    })
-  }
+const MessageForm: FC = () => {
+  const [sendInProgress, { toggle: setSendInProgress }] = useBoolean(false)
+  const onSubmit = useOnSubmit({ afterSubmit: setSendInProgress })
+  const handleOnSubmit = useCallback(
+    (data) => {
+      setSendInProgress()
+      onSubmit(data)
+    },
+    [onSubmit, setSendInProgress]
+  )
   return (
-    <Flex flexDirection={'column'}>
-      <Flex mb={2} flexDirection={'column'}>
-        <Text fontSize={'md'} fontWeight={'semibold'}>
-          Name:
-        </Text>
-        <InputField placeholder={'Enter name...'} />
+    <Form onSubmit={handleOnSubmit}>
+      <Flex flexDirection={'column'}>
+        <Flex mb={2} flexDirection={'column'}>
+          <FormFieldController
+            name={'name'}
+            label={'Name:'}
+            defaultValue={''}
+            component={InputField}
+            rules={{ required: true }}
+            componentProps={{ placeholder: 'Enter name...' }}
+          />
+        </Flex>
+        <Flex mb={2} flexDirection={'column'}>
+          <FormFieldController
+            name={'email'}
+            label={'Email:'}
+            defaultValue={''}
+            component={InputField}
+            rules={{ required: true }}
+            componentProps={{ placeholder: 'Enter email...' }}
+          />
+        </Flex>
+        <Flex mb={2} flexDirection={'column'}>
+          <FormFieldController
+            name={'message'}
+            label={'Message:'}
+            defaultValue={''}
+            component={TextAreaField}
+            rules={{ required: true }}
+            componentProps={{
+              minH: 32,
+              size: 'lg',
+              placeholder: 'Enter message...'
+            }}
+          />
+        </Flex>
+        <Button
+          type={'submit'}
+          isLoading={sendInProgress}
+          loadingText='🚀'
+          padding={{ base: 'unset', md: 'unset' }}
+          w={'50%'}
+        >
+          Whoosh...
+        </Button>
       </Flex>
-      <Flex mb={2} flexDirection={'column'}>
-        <Text fontSize={'md'} fontWeight={'semibold'}>
-          Email:
-        </Text>
-        <InputField placeholder={'Enter email...'} />
-      </Flex>
-      <Flex mb={2} flexDirection={'column'}>
-        <Text fontSize={'md'} fontWeight={'semibold'}>
-          Message:
-        </Text>
-        <TextAreaField minH={32} size={'lg'} placeholder={'Enter message...'} />
-      </Flex>
-      <Button
-        onClick={handleClick}
-        padding={{ base: 'unset', md: 'unset' }}
-        w={'50%'}
-      >
-        Whoosh...
-      </Button>
-    </Flex>
+    </Form>
   )
 }
 

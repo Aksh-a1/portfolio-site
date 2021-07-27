@@ -1,13 +1,14 @@
 import { FC } from 'react'
-import { Textarea } from '@chakra-ui/react'
+import { forwardRef, Textarea } from '@chakra-ui/react'
 
 interface Props {
   placeholder?: string
   size?: string
   minH?: number
+  [x: string]: any
 }
 
-const TextAreaField: FC<Props> = ({ placeholder, size = 'sm', minH }) => {
+const TextAreaField: FC<Props> = forwardRef(({ placeholder, size = 'sm', minH, ...rest }, ref) => {
   return (
     <Textarea
       placeholder={placeholder}
@@ -18,8 +19,10 @@ const TextAreaField: FC<Props> = ({ placeholder, size = 'sm', minH }) => {
       backgroundColor={'black'}
       color={'white'}
       borderRadius={'md'}
+      ref={ref}
+      {...rest}
     />
   )
-}
+})
 
 export default TextAreaField
