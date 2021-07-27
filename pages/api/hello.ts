@@ -4,10 +4,12 @@ type Data = {
   message: string
 }
 
-export default function handler(
-  req: NextApiRequest,
+interface Props {
+  req: NextApiRequest
   res: NextApiResponse<Data>
-) {
-  console.log(req)
+}
+
+export default function handler(props: Props) {
+  const { res } = props
   res.status(200).json({ message: 'Hello World!' })
 }

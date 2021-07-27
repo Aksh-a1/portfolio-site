@@ -21,17 +21,6 @@ const useOnSubmit: (args: Args) => SubmitHandler<FieldValues> = ({
             throw new Error('send-mail-fail')
           }
           if (data === 'BAD_REQUEST') {
-            throw new Error('bad-request')
-          }
-          toast({
-            title: 'Message sent successfully',
-            status: 'success',
-            duration: 9000,
-            position: 'top'
-          })
-        })
-        .catch((err) => {
-          if (err === 'bad-request') {
             toast({
               title: 'Error',
               description: 'Maximum request limit reached!',
@@ -41,6 +30,14 @@ const useOnSubmit: (args: Args) => SubmitHandler<FieldValues> = ({
             })
             return
           }
+          toast({
+            title: 'Message sent successfully',
+            status: 'success',
+            duration: 9000,
+            position: 'top'
+          })
+        })
+        .catch(() => {
           toast({
             title: 'Error Occured',
             description: 'There was an error while sending message!',
