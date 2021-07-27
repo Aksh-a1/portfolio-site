@@ -4,7 +4,7 @@ import {
   ControllerRenderProps,
   UseFormReturn
 } from 'react-hook-form'
-import { FormControl, FormLabel } from '@chakra-ui/react'
+import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/react'
 import { FormContext } from './Form'
 
 interface Props {
@@ -32,7 +32,13 @@ const FormFieldController: FC<Props> = ({
   return (
     <FormControl id={name} isInvalid={errors[name]}>
       {label && (
-        <FormLabel m={0} fontSize={'md'} fontWeight={'semibold'} as={'legend'} htmlFor={name}>
+        <FormLabel
+          m={0}
+          fontSize={'md'}
+          fontWeight={'semibold'}
+          as={'legend'}
+          htmlFor={name}
+        >
           {label}
         </FormLabel>
       )}
@@ -45,6 +51,11 @@ const FormFieldController: FC<Props> = ({
           <Component {...{ ...field, ...componentProps }} />
         )}
       />
+      {errors[name] && (
+        <FormErrorMessage fontFamily={'sans-serif'} fontWeight={'extrabold'}>
+          {errors[name].message}
+        </FormErrorMessage>
+      )}
     </FormControl>
   )
 }

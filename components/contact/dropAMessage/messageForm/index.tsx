@@ -5,6 +5,7 @@ import FormFieldController from '../../../common/formfields/form/FormFieldContro
 import InputField from '../../../common/formfields/inputField'
 import TextAreaField from '../../../common/formfields/textAreaField'
 import useOnSubmit from './useOnSubmit'
+import validations from './validations'
 
 const MessageForm: FC = () => {
   const [sendInProgress, { toggle: setSendInProgress }] = useBoolean(false)
@@ -25,7 +26,7 @@ const MessageForm: FC = () => {
             label={'Name:'}
             defaultValue={''}
             component={InputField}
-            rules={{ required: true }}
+            rules={{ ...validations.name }}
             componentProps={{ placeholder: 'Enter name...' }}
           />
         </Flex>
@@ -35,7 +36,7 @@ const MessageForm: FC = () => {
             label={'Email:'}
             defaultValue={''}
             component={InputField}
-            rules={{ required: true }}
+            rules={{ ...validations.email }}
             componentProps={{ placeholder: 'Enter email...' }}
           />
         </Flex>
@@ -45,7 +46,7 @@ const MessageForm: FC = () => {
             label={'Message:'}
             defaultValue={''}
             component={TextAreaField}
-            rules={{ required: true }}
+            rules={{ ...validations.message }}
             componentProps={{
               minH: 32,
               size: 'lg',
