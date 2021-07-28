@@ -1,9 +1,9 @@
 import { FC, useCallback } from 'react'
 import { Flex, Button, useBoolean } from '@chakra-ui/react'
-import Form from '../../../common/formfields/form/Form'
-import FormFieldController from '../../../common/formfields/form/FormFieldController'
-import InputField from '../../../common/formfields/inputField'
-import TextAreaField from '../../../common/formfields/textAreaField'
+import Form from '../../../common/forms/form/Form'
+import FormFieldController from '../../../common/forms/form/FormFieldController'
+import InputField from '../../../common/forms/fields/inputField'
+import TextAreaField from '../../../common/forms/fields/textAreaField'
 import useOnSubmit from './useOnSubmit'
 import validations from './validations'
 
