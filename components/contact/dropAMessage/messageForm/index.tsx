@@ -57,7 +57,6 @@ const MessageForm: FC = () => {
         <Button
           type={'submit'}
           isLoading={sendInProgress}
-          loadingText='🚀'
           padding={{ base: 'unset', md: 'unset' }}
           w={'50%'}
         >
