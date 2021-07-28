@@ -1,20 +1,25 @@
 const emailRegex =
-  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+const whitespaceRegex = !/^\s+$/i
 
 const contactFormValidationRules = {
   name: {
-    required: 'This is a required field',
+    required: 'Required',
     maxLength: {
       value: 50,
-      message: 'Max length is 50'
+      message: 'Max length is 50 characters'
     },
-    minLength: { value: 4, message: 'Min length is 4' }
+    minLength: { value: 4, message: 'Min length is 4 characters' },
+    pattern: {
+      value: whitespaceRegex,
+      message: 'Enter a value not only whitespaces'
+    }
   },
   email: {
-    required: 'This is a required field',
+    required: 'Required',
     maxLength: {
       value: 50,
-      message: 'Max length is 50'
+      message: 'Max length is 50 characters'
     },
     pattern: {
       value: emailRegex,
@@ -22,12 +27,16 @@ const contactFormValidationRules = {
     }
   },
   message: {
-    required: 'This is a required field',
+    required: 'Required',
     maxLength: {
       value: 200,
-      message: 'Max length is 200'
+      message: 'Max length is 200 characters'
     },
-    minLength: { value: 4, message: 'Min length is 4' }
+    minLength: { value: 4, message: 'Min length is 4 characters' },
+    pattern: {
+      value: whitespaceRegex,
+      message: 'Enter a value not only whitespaces'
+    }
   }
 }
 

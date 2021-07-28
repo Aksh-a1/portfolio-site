@@ -52,7 +52,11 @@ const FormFieldController: FC<Props> = ({
         )}
       />
       {errors[name] && (
-        <FormErrorMessage fontFamily={'sans-serif'} fontWeight={'extrabold'}>
+        <FormErrorMessage
+          m={0}
+          fontFamily={'sans-serif'}
+          fontWeight={'extrabold'}
+        >
           {errors[name].message}
         </FormErrorMessage>
       )}
