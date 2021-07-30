@@ -15,21 +15,9 @@ const HomePage = () => {
   const [tab, setTab] = useState<TabType | null>(null)
   const [pageLoad, setPageLoad] = useState<boolean>(true)
 
-  const handleRouteChange = useCallback(
-    (path: TabType) => {
-      const newRoutePath = `#/${path}`
-      router.push(newRoutePath, undefined, { shallow: true })
-    },
-    [router]
-  )
-
-  const handleTabChange = useCallback(
-    (newTab: TabType) => {
-      setTab(newTab)
-      handleRouteChange(newTab)
-    },
-    [handleRouteChange]
-  )
+  const handleTabChange = useCallback((newTab: TabType) => {
+    setTab(newTab)
+  }, [])
 
   useEffect(
     () => {
@@ -55,7 +43,7 @@ const HomePage = () => {
           <Header onClick={handleTabChange} active={tab} />
         )}
         {(tab === 'home' || tab === '/') && <Home onClick={handleTabChange} />}
-        {tab === 'about' && <About onClick={handleTabChange}/>}
+        {tab === 'about' && <About onClick={handleTabChange} />}
         {tab === 'skills' && <Skills />}
         {tab === 'contact' && <Contact />}
       </Flex>

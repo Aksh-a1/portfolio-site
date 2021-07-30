@@ -90,7 +90,10 @@ const About: FC<Props> = ({ onClick }) => {
         .
       </Text>
       <Text {...textProps}>
-        Fancy a chat, <u onClick={handleClick}>drop me a message!</u>
+        Fancy a chat,{' '}
+        <Text as={'u'} _hover={{ cursor: 'pointer' }} onClick={handleClick}>
+          drop me a message!
+        </Text>
       </Text>
     </Box>
   )
