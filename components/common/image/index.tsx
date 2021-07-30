@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react'
 
 interface Props extends ImageProps {
-  fallbackProps: BoxProps
+  fallbackProps?: BoxProps
 }
 
 const ImageFallback: FC<BoxProps> = (props) => (

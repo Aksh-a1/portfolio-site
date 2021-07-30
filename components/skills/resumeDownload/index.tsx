@@ -1,4 +1,7 @@
-import { Text, Image, IconButton, Link } from '@chakra-ui/react'
+import { Text, IconButton, Link } from '@chakra-ui/react'
+import Image from '../../common/image'
+
+const imageHeight = { height: { base: '70%', md: '90%' } }
 
 const ResumeDownload = () => {
   return (
@@ -15,7 +18,8 @@ const ResumeDownload = () => {
         h={'14'}
         icon={
           <Image
-            height={{ base: '70%', md: '90%' }}
+            fallbackProps={{ ...imageHeight }}
+            {...imageHeight}
             src={'/save.svg'}
             alt={'save image'}
           />

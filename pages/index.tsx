@@ -55,7 +55,7 @@ const HomePage = () => {
           <Header onClick={handleTabChange} active={tab} />
         )}
         {(tab === 'home' || tab === '/') && <Home onClick={handleTabChange} />}
-        {tab === 'about' && <About />}
+        {tab === 'about' && <About onClick={handleTabChange}/>}
         {tab === 'skills' && <Skills />}
         {tab === 'contact' && <Contact />}
       </Flex>
