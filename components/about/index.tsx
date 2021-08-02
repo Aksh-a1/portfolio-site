@@ -46,8 +46,7 @@ const About: FC<Props> = ({ onClick }) => {
         <i>Finding the cause is 50% of the solution to the problem</i> and
         that&apos;s where I shine. My key strength is root cause analysis and
         problem-solving. I have over 2 years of experience in developing
-        microservices and micro-frontend architecture applications. Majorly
-        working with ReactJS.
+        micro-frontend architecture applications. Majorly working with ReactJS.
       </Text>
       <Text {...textProps} mb={0}>
         Apart from work I like to travel around places and{' '}
