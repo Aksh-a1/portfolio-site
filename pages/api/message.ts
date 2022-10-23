@@ -8,10 +8,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { name, email, message, id } = req.body
   maxApiLimitReach(id, res)
   try {
-    await sendEmail({ name, email, message })
+    console.log(sendEmail({ name, email, message }))
     res.status(200).json({ msg: 'Email sent' })
   } catch (e) {
-    res.status(500).end('Server Error')
+    res.status(500).json({ msg: `Server Error: ${e}` })
   }
 }
 

@@ -43,9 +43,9 @@ const About: FC<Props> = ({ onClick }) => {
         developer&quot;; I am a problem solver😁.
       </Text>
       <Text {...textProps}>
-        <i>Finding the cause is 50% of the solution to the problem</i> and
-        that&apos;s where I shine. My key strength is root cause analysis and
-        problem-solving. I have over 2 years of experience in developing
+        My key strength is debugging the code and problem-solving. 
+        I believe <i>finding the cause is 50% of the solution to the problem</i>. 
+        I have over 3.5 years of experience in developing
         micro-frontend architecture applications. Majorly working with ReactJS.
       </Text>
       <Text {...textProps} mb={0}>
@@ -75,10 +75,10 @@ const About: FC<Props> = ({ onClick }) => {
       </Text>
       <Text {...textProps}>
         At present, I&apos;m working in{' '}
-        <a href={'https://www.mindtree.com/'}>
-          <u>Mindtree</u>
+        <a href={'https://www.dell.com/en-us/blog/tags/dell-emc/'}>
+          <u>Dell EMC</u>
         </a>{' '}
-        as Senior Full Stack Developer and exploring the beauty of{' '}
+        as Software Engineer 2 and exploring the beauty of{' '}
         <a
           href={
             'https://www.google.co.in/search?q=udaipur&source=lnms&tbm=isch'
