@@ -9,7 +9,7 @@ interface Props {
   [x: string]: any
 }
 
-const InputField: FC<Props> = forwardRef(({ placeholder, size = 'lg', onChange, ...rest }, ref) => {
+const InputField = forwardRef<Props, FC>(({ placeholder, size = 'lg', onChange, ...rest }, ref) => {
   return (
     <Input
       placeholder={placeholder}

@@ -8,7 +8,7 @@ interface Props {
   [x: string]: any
 }
 
-const TextAreaField: FC<Props> = forwardRef(({ placeholder, size = 'sm', minH, ...rest }, ref) => {
+const TextAreaField= forwardRef<Props, FC>(({ placeholder, size = 'sm', minH, ...rest }, ref) => {
   return (
     <Textarea
       placeholder={placeholder}
